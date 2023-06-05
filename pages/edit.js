@@ -431,60 +431,7 @@ const Edit = () => {
           </>
         )}
         {/* SERVICES */}
-        {currentTabs === "SERVICES" && (
-          <>
-            <div className="mt-10">
-              {data.services.map((service, index) => (
-                <div key={service.id}>
-                  <div className="flex items-center justify-between">
-                    <h1 className="text-2xl">{service.title}</h1>
-                    <Button
-                      onClick={() => deleteService(service.id)}
-                      type="primary"
-                    >
-                      Delete
-                    </Button>
-                  </div>
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">Title</label>
-                    <input
-                      value={service.title}
-                      onChange={(e) =>
-                        editServices(index, {
-                          ...service,
-                          title: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-5">
-                    <label className="w-1/5 text-lg opacity-50">
-                      Description
-                    </label>
-                    <textarea
-                      value={service.description}
-                      onChange={(e) =>
-                        editServices(index, {
-                          ...service,
-                          description: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                    ></textarea>
-                  </div>
-                  <hr className="my-10"></hr>
-                </div>
-              ))}
-            </div>
-            <div className="my-10">
-              <Button onClick={addService} type="primary">
-                Add Service +
-              </Button>
-            </div>
-          </>
-        )}
+        
         {currentTabs === "ABOUT" && (
           <div className="mt-10">
             <h1 className="text-2xl">About</h1>

@@ -12,9 +12,9 @@
         {"id":"2","title":"LinkedIn","link":"https://www.linkedin.com/in/claire-weissman2001/"},
         {"id":"5","title":"Email","link":"mailto:claire.weissman@gmail.com"}],
     "projects":
-        [{"id":"1","title":"Team Scheduler Application","description":"Web Development project for University Capstone Project","url":"https://youtu.be/ok2NB8w1RKY"},
-        {"id":"2","title":"Deep Learning Uncertainty Metric Creation","description":"Deep Learning/Data Science Research Project at Depaul University","url":"https://dl.acm.org/doi/abs/10.1145/3477314.3507232?casa_token=-OhcyD1Fp4QAAAAA:J_OhUPI_KHqDMdarYIcY4CPOHMmh0AUHbyjuZmtX2v3czZddLsXXfNFkydgAxy9S2XEIzSLkuBSU"},
-        {"id":"3","title":"Automatic Legend Generation","description":"Web Design Project creating legends for Virtual Reality Visualizations","url":"https://www.youtube.com/watch?v=WcjAFzMsry4"}],
+        [{"id":"1","title":"Team Scheduler Application","description":"Web Development project for University Capstone Project","imageSrc":"https://postimg.cc/v4f8cVB8", "url":"https://youtu.be/ok2NB8w1RKY"},
+        {"id":"2","title":"Deep Learning Uncertainty Metric Creation","description":"Deep Learning/Data Science Research Project at Depaul University","imageSrc": "https://postimg.cc/fSMZt2VM", "url":"https://dl.acm.org/doi/abs/10.1145/3477314.3507232?casa_token=-OhcyD1Fp4QAAAAA:J_OhUPI_KHqDMdarYIcY4CPOHMmh0AUHbyjuZmtX2v3czZddLsXXfNFkydgAxy9S2XEIzSLkuBSU"},
+        {"id":"3","title":"Automatic Legend Generation","description":"Web Design Project creating legends for Virtual Reality Visualizations","imageSrc": "https://postimg.cc/gwM0WPj3", "url":"https://www.youtube.com/watch?v=WcjAFzMsry4"}],
 
     "aboutpara":
         "Software engineer bringing experience in full stack development and Machine Learning. Experience on both front-end and back-end projects using both Rust and Go and as a Machine Learning Engineer using Python. Researcher on data science and machine learning project. Team member who excels in coordination and strives to contribute to work projects and communicate clearly.",

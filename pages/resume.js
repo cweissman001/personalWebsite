@@ -7,8 +7,6 @@ import Socials from "../components/Socials";
 import Button from "../components/Button";
 import { useTheme } from "next-themes";
 // Data
-import { name, showResume } from "../data/portfolio.json";
-import { resume } from "../data/portfolio.json";
 import data from "../data/portfolio.json";
 
 const Resume = () => {
@@ -18,7 +16,7 @@ const Resume = () => {
 
   useEffect(() => {
     setMount(true);
-    if (!showResume) {
+    if (!data.showResume) {
       router.push("/");
     }
   }, []);
@@ -63,16 +61,16 @@ const Resume = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
                   <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {name}
+                    {data.name}
                   </h1>
                 </div>
                 
                 <h2 className="text-2xl mt-4 font-semibold text-gray-700 dark:text-gray-200">
-                  {resume.tagline}
+                  {data.resume.tagline}
                 </h2>
                 
                 <p className="w-full text-lg mt-4 leading-relaxed text-gray-600 dark:text-gray-300 italic">
-                  {resume.description}
+                  {data.resume.description}
                 </p>
                 
                 <div className="mt-8">
@@ -85,7 +83,7 @@ const Resume = () => {
                   </div>
 
                   <div className="space-y-6">
-                    {resume.experiences.map(
+                    {data.resume.experiences.map(
                       ({ id, dates, type, position, bullets }) => (
                         <div
                           key={id}
@@ -118,13 +116,13 @@ const Resume = () => {
                       : "bg-gray-50/50 border-gray-200"
                   }`}>
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                      {resume.education.universityName}
+                      {data.resume.education.universityName}
                     </h2>
                     <h3 className="text-base text-gray-600 dark:text-gray-400 mt-2">
-                      {resume.education.universityDate}
+                      {data.resume.education.universityDate}
                     </h3>
                     <p className="text-base mt-3 leading-relaxed text-gray-600 dark:text-gray-300">
-                      {resume.education.universityPara}
+                      {data.resume.education.universityPara}
                     </p>
                   </div>
                 </div>
@@ -135,7 +133,7 @@ const Resume = () => {
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {resume.languages && (
+                    {data.resume.languages && (
                       <div className={`resume-card p-6 rounded-xl border transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover-lift ${
                         theme.theme === "dark"
                           ? "bg-slate-800/50 border-slate-600 hover:bg-slate-800/70"
@@ -146,7 +144,7 @@ const Resume = () => {
                           <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Languages</h2>
                         </div>
                         <ul className="space-y-2">
-                          {resume.languages.map((language, index) => (
+                          {data.resume.languages.map((language, index) => (
                             <li key={index} className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                               <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></span>
                               {language}
@@ -156,7 +154,7 @@ const Resume = () => {
                       </div>
                     )}
 
-                    {resume.frameworks && (
+                    {data.resume.frameworks && (
                       <div className={`resume-card p-6 rounded-xl border transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover-lift ${
                         theme.theme === "dark"
                           ? "bg-slate-800/50 border-slate-600 hover:bg-slate-800/70"
@@ -167,7 +165,7 @@ const Resume = () => {
                           <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Frameworks</h2>
                         </div>
                         <ul className="space-y-2">
-                          {resume.frameworks.map((framework, index) => (
+                          {data.resume.frameworks.map((framework, index) => (
                             <li key={index} className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                               <span className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"></span>
                               {framework}
@@ -177,7 +175,7 @@ const Resume = () => {
                       </div>
                     )}
 
-                    {resume.others && (
+                    {data.resume.others && (
                       <div className={`resume-card p-6 rounded-xl border transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover-lift ${
                         theme.theme === "dark"
                           ? "bg-slate-800/50 border-slate-600 hover:bg-slate-800/70"
@@ -188,7 +186,7 @@ const Resume = () => {
                           <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Others</h2>
                         </div>
                         <ul className="space-y-2">
-                          {resume.others.map((other, index) => (
+                          {data.resume.others.map((other, index) => (
                             <li key={index} className="flex items-center gap-2 text-gray-700 dark:text-gray-300">
                               <span className="w-1.5 h-1.5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full"></span>
                               {other}

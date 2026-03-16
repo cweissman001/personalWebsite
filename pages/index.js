@@ -49,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
+    <div className={`relative min-h-screen ${data.showCursor && "cursor-none"}`}>
       {data.showCursor && <Cursor />}
       <Head>
         <title>{data.name}</title>
@@ -58,45 +58,53 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
+      <div className="container mx-auto mb-10 px-4 laptop:px-0">
         <Header
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
-            <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
-            >
-              {data.headerTaglineOne}
-            </h1>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+              <h1
+                ref={textOne}
+                className="text-4xl tablet:text-7xl laptop:text-7xl laptopl:text-9xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight"
+              >
+                {data.headerTaglineOne}
+              </h1>
+            </div>
             <h1
               ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-4xl tablet:text-7xl laptop:text-7xl laptopl:text-9xl font-bold text-gray-800 dark:text-gray-100 leading-tight mt-4"
             >
               {data.headerTaglineTwo}
             </h1>
             <h1
               ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-4xl tablet:text-7xl laptop:text-7xl laptopl:text-9xl font-bold text-gray-700 dark:text-gray-200 leading-tight mt-4"
             >
               {data.headerTaglineThree}
             </h1>
             <h1
               ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl font-semibold text-gray-600 dark:text-gray-300 leading-tight mt-4 italic"
             >
               {data.headerTaglineFour}
             </h1>
           </div>
 
-          <Socials className="mt-2 laptop:mt-5" />
+          <div className="mt-8 laptop:mt-12">
+            <Socials />
+          </div>
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Projects and Work Samples</h1>
+        <div className="mt-16 laptop:mt-24 p-2 laptop:p-0" ref={workRef}>
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+            <h1 className="text-3xl laptop:text-4xl font-bold text-gray-900 dark:text-gray-100">Projects and Work Samples</h1>
+          </div>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+          <div className="mt-8 laptop:mt-12 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-8 laptop:gap-10">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
@@ -118,11 +126,36 @@ export default function Home() {
             </Link>
           </div>
         )}
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About Me</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
+        <div className="mt-16 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+            <h1 className="text-3xl laptop:text-4xl font-bold text-gray-900 dark:text-gray-100">About Me</h1>
+          </div>
+          
+          <div className={`max-w-4xl p-8 rounded-2xl ${
+            typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700"
+              : "bg-gradient-to-br from-white via-gray-50 to-white border border-gray-200"
+          } shadow-xl backdrop-blur-sm transition-all duration-300`}>
+            <p className="text-lg laptop:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+              {data.aboutpara}
+            </p>
+            
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                Full Stack Development
+              </span>
+              <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">
+                Machine Learning
+              </span>
+              <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                Research & Development
+              </span>
+              <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">
+                Team Leadership
+              </span>
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
